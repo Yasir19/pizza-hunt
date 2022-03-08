@@ -60,7 +60,7 @@ const handlePizzaSubmit = event => {
     body: JSON.stringify(formData)
   })
   .then(res => res.json())
-  .then(posrRes => {
+  .then(postRes => {
     alert('pizza created successfully!');
     console.log(postRes)
   })
