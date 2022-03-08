@@ -41,8 +41,18 @@ comments:[
 );
 //use virtual to get the totoal count of comment abd replies on retrieval 
 PizzaSchema.virtual('commentCount').get(function(){
+    // const value1 = this.comments
+    // console.log(value1)
+   
+    // const value2 = value1.reduce((total,comment) => {
+    //     console.log(`total:${total}`)
+    //     console.log(`replies:${comment.replies.length+1 }`)
+    //     return total + comment.replies.length+ 1 }, 0)
+    //     console.log(`va:${value2}`)
+
+
     return this.comments.reduce((total, comment) =>
-     total + comment.replies.length + 1 , 0)
+     total + comment.replies.length + 1, 0)
      
 });
 
