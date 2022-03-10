@@ -3,11 +3,15 @@ const dateFormat = require('../utils/dateFormat');
 const PizzaSchema = new Schema({
 // name for the pizza
 pizzaName:{
-    type:String
+    type:String,
+    require: true,
+    trim: true
 },
 //name of the user that create pizza 
 createdBy:{
-    type:String
+    type:String,
+    require: true,
+    trim: true
 },
 // a timestamp of when the pizza was created 
 //a timestamp of any update to the pizza data 
@@ -19,6 +23,8 @@ createdAt:{
 // the pizza suggested size 
 size: {
 type:String,
+required: true,
+enum:['Personal', 'Small', 'Medium', 'Large', 'Extra Large'],
 default: 'Large'
 },
 // the pizza topings 

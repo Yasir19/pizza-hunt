@@ -7,10 +7,14 @@ const ReplaySchema = new Schema(
             default: () => new Types.ObjectId()
         },
         replyBody: {
-            type: String
+            type: String,
+            required:true,
+            trim:true
         },
         writtenBy: {
-            type:String
+            type:String,
+            required:true,
+            trim:true
         },
         createdAt: {
             type:Date,
@@ -29,10 +33,13 @@ const ReplaySchema = new Schema(
 );
 const CommentSchema = new Schema({
     writtenBy:{
-        type: String
+        type: String,
+        required:true,
+        trim:true
     },
     commentBody:{
-        type:String
+        type:String,
+        required:true
     },
     
     createdAt:{
